@@ -5,8 +5,13 @@ talking about.
 
 Assume the following XML snippet:
 
-> <tv\> <show name=“Family Guy”\> <dog\>Brian</dog\> <kid\>Chris</kid\>
-> <kid\>Meg</kid\> </show\> </tv\>
+    <tv>
+      <show name="Family Guy">
+        <dog>Brian</dog>
+        <kid>Chris</kid>
+        <kid>Meg</kid>
+      </show>
+    </tv>
 
 There’s a quick and dirty way to do convert such a document to an array,
 using type casting and the JSON functions to ensure there are no exotic
@@ -38,9 +43,14 @@ Here is the result for our sample XML, eg if we `print_r($a)`:
 Pretty nifty, eh? But maybe we want to embed some HTML tags or something
 crazy along those lines. then we need a CDATA node…
 
-> <tv\> <show name=“Family Guy”\> <dog\>Brian</dog\> <kid\>Chris</kid\>
-> <kid\>Meg</kid\> <kid\><![CDATA[<em\>Stewie</em\>]]\></kid\> </show\>
-> </tv\>
+    <tv>
+      <show name="Family Guy">
+        <dog>Brian</dog>
+        <kid>Chris</kid>
+        <kid>Meg</kid>
+        <kid><![CDATA[<em>Stewie</em>]]></kid>
+      </show>
+    </tv>
 
 The snippet of XML above would yield the following:
 
