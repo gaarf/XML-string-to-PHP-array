@@ -31,9 +31,12 @@ function domnode_to_array($node) {
        if(!isset($output[$t])) {
         $output[$t] = array();
        }
+       if(empty($v)) {
+         $v = '';
+       }
        $output[$t][] = $v;
      }
-     elseif($v) {
+     elseif($v || $v === '0') {
       $output = (string) $v;
      }
     }
