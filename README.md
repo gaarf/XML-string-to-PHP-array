@@ -104,4 +104,5 @@ Victory is mine! :D
 
 ---
 
-If a node has attributes, but contains only text, then the output will be an array with both *@content* and *@attributes* keys. (based on the contribution from clh-code)
+### Contributions
+ * clh-code#1 - If a node has attributes, but contains only text, then the output will be an array with both ```@content``` and ```@attributes``` keys
