@@ -13,10 +13,17 @@ function prettyPrint($title, $thing)
 $xmlstr = <<<EOD
   <tv>
     <show name="Family Guy">
-      <dog type="beagle">Brian</dog>
+      <dog>Brian</dog>
       <kid>Chris</kid>
       <kid>Meg</kid>
       <kid><![CDATA[<em>Stewie</em>]]></kid>
+    </show>
+    <show name="American Dad!">
+      <pet type="fish">Klaus</pet>
+      <alien nick="The Decider">
+        <persona>Roger Smith</persona>
+        <persona>Sidney Huffman</persona>
+      </alien>
     </show>
     <show name="Edge Cases" zero="0" empty="">
       <empty></empty>
@@ -30,20 +37,28 @@ $expected = array(
   "show" => array(
 
     array(
-      "dog" => array(
-      	array(
-				"dog"=>"Brian",
-				"@attributes" => array(
-					"type"=>"beagle"
-				)
-			)
-	  ),
+      "dog" => 'Brian',
       "kid" => array(
         "Chris",
         "Meg",
         "<em>Stewie</em>"
       ),
       "@attributes" => array( "name" => "Family Guy" )
+    ),
+
+    array(
+      'pet' => array(
+        "@content" => 'Klaus',
+        "@attributes" => array( "type" => "fish" )
+      ),
+      'alien' => array(
+        'persona' => array(
+          'Roger Smith',
+          'Sidney Huffman'
+        ),
+        "@attributes" => array( "nick" => "The Decider" )
+      ),
+      "@attributes" => array( "name" => "American Dad!" )
     ),
 
     array(

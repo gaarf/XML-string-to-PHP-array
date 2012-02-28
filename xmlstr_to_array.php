@@ -16,7 +16,6 @@ function xmlstr_to_array($xmlstr) {
 }
 
 function domnode_to_array($node) {
-  $alt = false; //Flag for regular output 
   $output = array();
   switch ($node->nodeType) {
 
@@ -41,10 +40,7 @@ function domnode_to_array($node) {
         }
       }
       if($node->attributes->length && !is_array($output)) { //Has attributes but isn't an array
-        $a = array();
-        $nodeName =  $node->nodeName;
-        $output = array(0=>array($nodeName=>$output)); //Change output into an array.
-        $alt = true; //Change the output
+        $output = array('@content'=>$output); //Change output into an array.
       }
       if(is_array($output)) {
         if($node->attributes->length) {
@@ -52,11 +48,7 @@ function domnode_to_array($node) {
           foreach($node->attributes as $attrName => $attrNode) {
             $a[$attrName] = (string) $attrNode->value;
           }
-          if($alt){
-     						 $output[0]['@attributes'] = $a; //Add as an array for consistency
-    						}else{
-    							 $output['@attributes'] = $a;
-    						}
+          $output['@attributes'] = $a;
         }
         foreach ($output as $t => $v) {
           if(is_array($v) && count($v)==1 && $t!='@attributes') {
