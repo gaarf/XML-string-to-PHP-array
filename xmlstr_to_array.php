@@ -12,7 +12,10 @@
 function xmlstr_to_array($xmlstr) {
   $doc = new DOMDocument();
   $doc->loadXML($xmlstr);
-  return domnode_to_array($doc->documentElement);
+  $root = $doc->documentElement;
+  $output = domnode_to_array($root);
+  $output['@root'] = $root->tagName;
+  return $output;
 }
 
 function domnode_to_array($node) {
