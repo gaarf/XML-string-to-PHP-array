@@ -11,7 +11,7 @@ function prettyPrint($title, $thing)
 }
 
 $xmlstr = <<<EOD
-  <tv>
+  <tv type="cartoon">
     <show name="Family Guy">
       <dog>Brian</dog>
       <kid>Chris</kid>
@@ -34,6 +34,11 @@ $xmlstr = <<<EOD
 EOD;
 
 $expected = array(
+
+  "@root" => 'tv',
+
+  "@attributes" => array( "type" => "cartoon" ),
+
   "show" => array(
 
     array(
