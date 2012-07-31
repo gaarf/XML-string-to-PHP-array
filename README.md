@@ -106,3 +106,6 @@ Victory is mine! :D
 
 ### Contributions
 [clh-code#1] If a node has attributes, but contains only text, then the output will be an array with both ```@content``` and ```@attributes``` keys
+
+[reggi#4] store root element tag name in ```@root```
+
