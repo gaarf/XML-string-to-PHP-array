@@ -109,3 +109,4 @@ Victory is mine! :D
 
 [reggi#4] store root element tag name in ```@root```
 
+[janbarasek#13] Add support for PHP 7.1 + better code style
