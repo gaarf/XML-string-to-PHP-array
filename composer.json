@@ -1,0 +1,25 @@
+{
+	"name": "gaarf/xml-to-php-array",
+	"description": "XML to PHP array convertor",
+	"homepage": "https://github.com/gaarf/XML-string-to-PHP-array",
+	"authors": [
+		{
+			"name": "Adrien Cahen",
+			"homepage": "http://gaarf.info"
+		},
+		{
+			"name": "Jan Barášek",
+			"homepage": "http://baraja.cz"
+		}
+	],
+	"require": {
+		"php": ">=7.1.0",
+		"ext-dom": "*"
+	},
+	"autoload": {
+		"classmap": [
+			"src/"
+		]
+	},
+	"minimum-stability": "stable"
+}
