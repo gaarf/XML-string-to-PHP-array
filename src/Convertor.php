@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Gaarf\XmlToPhp;
 
 
-class Convertor
+final class Convertor
 {
 
 	/**

@@ -5,12 +5,19 @@ declare(strict_types=1);
 namespace Gaarf\XmlToPhp;
 
 
-class Helper
+final class Helper
 {
 
+	/** @throws \Error */
+	public function __construct()
+	{
+		throw new \Error('Class ' . get_class($this) . ' is static and cannot be instantiated.');
+	}
+
+
 	/**
-	 * @param \DOMElement $node
-	 * @return array|string
+	 * @param \DOMElement|\DOMNode $node
+	 * @return mixed[]|string
 	 */
 	public static function domNodeToArray($node)
 	{
