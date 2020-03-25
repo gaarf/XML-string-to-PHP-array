@@ -28,5 +28,4 @@ class Convertor
 
 		return $output ?? [];
 	}
-
 }
