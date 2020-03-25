@@ -1,7 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-include("xmlstr_to_array.php");
+include __DIR__ . '/../src/Convertor.php';
+include __DIR__ . '/../src/Helper.php';
 
 function prettyPrint($title, $thing)
 {
@@ -84,10 +85,14 @@ $expected = array(
   )
 );
 
-$result = xmlstr_to_array($xmlstr);
+$result = \Gaarf\XmlToPhp\Convertor::covertToArray($xmlstr);
 
-
-prettyPrint("Input", $xmlstr);
-prettyPrint("Expected", $expected);
-prettyPrint("Output", $result);
-prettyPrint("Result", $result == $expected ? "SUCCESS :-)" : "FAILURE :-(");
+if ($result == $expected) {
+	prettyPrint('Result', 'SUCCESS :-)');
+} else {
+	prettyPrint('Result', 'FAILURE :-(');
+	prettyPrint('Input', $xmlstr);
+    prettyPrint('Expected', $expected);
+    prettyPrint('Output', $result);
+	prettyPrint('Result', 'FAILURE :-(');
+}
