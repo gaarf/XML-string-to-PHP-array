@@ -56,5 +56,4 @@ class Helper
 
 		return $output;
 	}
-
 }
