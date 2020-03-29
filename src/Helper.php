@@ -36,6 +36,9 @@ final class Helper
 						if (!isset($output[$t])) {
 							$output[$t] = [];
 						}
+                        if (empty($v)) {
+                            $v = '';
+                        }
 						$output[$t][] = $v;
 					} elseif ($v || $v === '0') {
 						$output = (string) $v;
