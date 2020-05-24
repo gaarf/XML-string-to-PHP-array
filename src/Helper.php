@@ -36,7 +36,7 @@ final class Helper
 						if (!isset($output[$t])) {
 							$output[$t] = [];
 						}
-						if (empty($v)) {
+						if (is_array($v) && empty($v)) {
 							$v = '';
 						}
 						$output[$t][] = $v;
