@@ -1,6 +1,12 @@
 name: Integrity check
 
-on: [push]
+on:
+  push:
+    branches: 
+      - master
+  pull_request:
+    branches:
+    - master
 
 jobs:
   build:
@@ -30,3 +36,6 @@ jobs:
 
     - name: Check PHPStan rules
       run: composer phpstan
+
+    - name: Run tests
+      run: bash tests/test.sh
