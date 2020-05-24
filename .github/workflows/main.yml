@@ -38,4 +38,4 @@ jobs:
       run: composer phpstan
 
     - name: Run tests
-      run: bash tests/test.sh
+      run: tests/test.sh
