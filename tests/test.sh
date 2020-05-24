@@ -68,7 +68,7 @@ $expected = array(
     ),
 
     array(
-      "empty" => array(),
+      "empty" => "",
       "foo" => array(
         "@attributes" => array( 
           "empty" => ""
