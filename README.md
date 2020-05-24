@@ -146,3 +146,5 @@ Victory is mine! :D
 [janbarasek#13] Add support for PHP 7.1 + better code style. 
 
 [janbarasek#15] Rewrite repository as Composer package.
+
+[roland-d#18] Treat empty node as string
