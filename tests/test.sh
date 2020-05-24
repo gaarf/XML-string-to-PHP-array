@@ -92,7 +92,8 @@ if ($result == $expected) {
 } else {
 	prettyPrint('Result', 'FAILURE :-(');
 	prettyPrint('Input', $xmlstr);
-    prettyPrint('Expected', $expected);
-    prettyPrint('Output', $result);
+  prettyPrint('Expected', $expected);
+  prettyPrint('Output', $result);
 	prettyPrint('Result', 'FAILURE :-(');
+  exit(1);
 }
