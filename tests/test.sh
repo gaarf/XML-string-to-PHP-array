@@ -36,10 +36,6 @@ EOD;
 
 $expected = array(
 
-  "@root" => 'tv',
-
-  "@attributes" => array( "type" => "cartoon" ),
-
   "show" => array(
 
     array(
@@ -82,7 +78,11 @@ $expected = array(
       )
     )
 
-  )
+  ),
+
+  "@attributes" => array( "type" => "cartoon" ),
+
+  "@root" => 'tv',
 );
 
 $result = \Gaarf\XmlToPhp\Convertor::covertToArray($xmlstr);
