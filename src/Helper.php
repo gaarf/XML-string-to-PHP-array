@@ -31,7 +31,7 @@ final class Helper
 				for ($i = 0, $m = $node->childNodes->length; $i < $m; $i++) {
 					$child = $node->childNodes->item($i);
 					$v = self::domNodeToArray($child);
-					if (isset($child->tagName)) {
+					if ($child !== null && isset($child->tagName)) {
 						$t = $child->tagName;
 						if (!isset($output[$t])) {
 							$output[$t] = [];
