@@ -13,13 +13,14 @@
 		}
 	],
 	"require": {
-		"php": ">=7.1.0",
+		"php": ">=7.4.0",
 		"ext-dom": "*"
 	},
 	"require-dev": {
 		"phpstan/phpstan": "^0.12.18",
 		"tracy/tracy": "^2.7",
-		"phpstan/phpstan-nette": "^0.12.6"
+		"phpstan/phpstan-nette": "^0.12.6",
+		"symplify/easy-coding-standard": "^7.2"
 	},
 	"autoload": {
 		"classmap": [

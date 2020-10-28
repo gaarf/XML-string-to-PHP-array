@@ -14,7 +14,6 @@ final class Convertor
 	 * @author Adrien aka Gaarf & contributors
 	 * @see http://gaarf.info/2009/08/13/xml-string-to-php-array/
 	 *
-	 * @param string $xml
 	 * @return mixed[]
 	 */
 	public static function covertToArray(string $xml): array
