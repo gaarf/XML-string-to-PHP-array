@@ -34,60 +34,63 @@ $xmlstr = <<<EOD
   </tv>
 EOD;
 
-$expected = array(
-
-  "show" => array(
-
-    array(
-      "dog" => 'Brian',
-      "kid" => array(
-        "Chris",
-        "Meg",
-        "<em>Stewie</em>"
-      ),
-      "@attributes" => array( "name" => "Family Guy" )
-    ),
-
-    array(
-      'pet' => array(
-        "@content" => 'Klaus',
-        "@attributes" => array( "type" => "fish" )
-      ),
-      'alien' => array(
-        'persona' => array(
+$expected = [
+  'show' => [
+    [
+      'dog' => 'Brian',
+      'kid' => [
+        'Chris',
+        'Meg',
+        '<em>Stewie</em>',
+      ],
+      '@attributes' => [
+        'name' => 'Family Guy',
+      ],
+    ],
+    [
+      'pet' => [
+        '@content' => 'Klaus',
+        '@attributes' => [
+          'type' => 'fish',
+        ],
+      ],
+      'alien' => [
+        'persona' => [
           'Roger Smith',
-          'Sidney Huffman'
-        ),
-        "@attributes" => array( "nick" => "The Decider" )
-      ),
-      "@attributes" => array( "name" => "American Dad!" )
-    ),
-
-    array(
-      "empty" => "",
-      "foo" => array(
-        "@attributes" => array( 
-          "empty" => ""
-        )
-      ),
-      "zero" => "0",
-      "@attributes" => array( 
-        "name" => "Edge Cases",
-        "empty" => "",
-        "zero" => "0"
-      )
-    )
-
-  ),
-
-  "@attributes" => array( "type" => "cartoon" ),
-
-  "@root" => 'tv',
-);
+          'Sidney Huffman',
+        ],
+        '@attributes' => [
+          'nick' => 'The Decider',
+        ],
+      ],
+      '@attributes' => [
+        'name' => 'American Dad!',
+      ],
+    ],
+    [
+      'empty' => '',
+      'foo' => [
+        '@attributes' => [
+          'empty' => '',
+        ],
+      ],
+      'zero' => '0',
+      '@attributes' => [
+        'name' => 'Edge Cases',
+        'zero' => '0',
+        'empty' => '',
+      ],
+    ],
+  ],
+  '@attributes' => [
+    'type' => 'cartoon',
+  ],
+  '@root' => 'tv',
+];
 
 $result = \Gaarf\XmlToPhp\Convertor::covertToArray($xmlstr);
 
-if ($result == $expected) {
+if ($result === $expected) {
 	prettyPrint('Result', 'SUCCESS :-)');
 } else {
 	prettyPrint('Result', 'FAILURE :-(');
