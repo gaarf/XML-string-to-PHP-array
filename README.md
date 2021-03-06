@@ -1,7 +1,7 @@
 XML to PHP array convertor
 ==========================
 
-Smart tool to convert your XML to PHP array.
+Somewhat smart tool to convert your XML to a PHP array.
 
 Install and simply use
 ----------------------
